@@ -1,0 +1,205 @@
+Landing.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Landing Page</title>
+</head>
+<body>
+
+<header>
+  <nav>
+    <ul>
+      <li>Home</li>
+      <li>Shop</li>
+      <li>Contact</li>
+    </ul>
+  </nav>
+</header>
+
+<section>
+  <h1>Welcome to Our Store</h1>
+  <p>Find the best products at affordable prices.</p>
+  <button>Shop Now</button>
+</section>
+
+<section>
+  <h2>Featured Products</h2>
+</section>
+
+<section>
+  <h2>Discounted Products</h2>
+</section>
+
+</body>
+</html>
+
+
+products.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Products</title>
+</head>
+<body>
+
+<main>
+  <article>
+    <img src="product.jpg" alt="Product">
+    <h3>Product Name</h3>
+    <p>₱500</p>
+    <a href="detail.html">View Details</a>
+  </article>
+</main>
+
+<aside>
+  <form>
+    <label>
+      <input type="checkbox"> On Sale
+    </label>
+    <br>
+    <label>
+      <input type="radio" name="price"> Low Price
+    </label>
+  </form>
+</aside>
+
+</body>
+</html>
+
+
+detail.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Details</title>
+</head>
+<body>
+
+<table border="1">
+  <tr>
+    <th>Feature</th>
+    <th>Detail</th>
+  </tr>
+  <tr>
+    <td>Color</td>
+    <td>Black</td>
+  </tr>
+</table>
+
+<form>
+  <label>Quantity:
+    <input type="number" min="1">
+  </label>
+  <button>Add to Cart</button>
+</form>
+
+<section>
+  <blockquote>
+    Great product! Highly recommended.
+  </blockquote>
+</section>
+
+</body>
+</html>
+
+
+cart.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cart</title>
+</head>
+<body>
+
+<ul>
+  <li>
+    <img src="product.jpg" alt="Product">
+    <h3>Product Name</h3>
+    <p>₱500</p>
+    <input type="number" value="1">
+  </li>
+</ul>
+
+<section>
+  <p>Subtotal: ₱500</p>
+  <a href="checkout.html">Proceed to Checkout</a>
+</section>
+
+<section>
+  <p>Your cart is currently empty.</p>
+</section>
+
+</body>
+</html>
+
+
+
+checkout.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout</title>
+</head>
+<body>
+
+<section>
+  <fieldset>
+    <legend>Shipping Address</legend>
+    <input type="text" placeholder="Name">
+    <input type="text" placeholder="Street">
+    <input type="text" placeholder="Zip Code">
+  </fieldset>
+</section>
+
+<form>
+  <label>
+    <input type="radio" name="payment"> Credit Card
+  </label>
+  <label>
+    <input type="radio" name="payment"> PayPal
+  </label>
+</form>
+
+<aside>
+  <p>Total: ₱500</p>
+</aside>
+
+</body>
+</html>
+
+
+
+account.html / signup.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Account</title>
+</head>
+<body>
+
+<header>
+  <h1>Arjay Labastida</h1>
+  <nav>
+    <a href="#">Orders</a>
+    <a href="#">Wishlist</a>
+  </nav>
+</header>
+
+<form>
+  <input type="email" required placeholder="Email">
+  <input type="password" required placeholder="Password">
+</form>
+
+<dl>
+  <dt>Order #1</dt>
+  <dd>₱500</dd>
+</dl>
+
+</body>
+</html>
