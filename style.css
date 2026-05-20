@@ -1,23 +1,25 @@
-
 /* =========================
    GLOBAL STYLES
 ========================= */
 
 :root {
-    --primary-color: #00a86b;      /* Prismatic Green */
-    --accent-color: #2ecc71;       /* Nebula Green */
-    --bg-light: #eefcf5;
+    --primary-color: #006b3c;      /* Prismatic Green */
+    --accent-color: #39d98a;       /* Nebula Green */
+    --bg-light: #eefcf4;
     --text-main: #333333;
     --white: #ffffff;
     --border-color: #b7e4c7;
 }
 
-/* Smooth Scroll */
+/* Mobile First */
+* {
+    box-sizing: border-box;
+}
+
 html {
     scroll-behavior: smooth;
 }
 
-/* Body */
 body {
     margin: 0;
     padding: 0;
@@ -34,7 +36,6 @@ body {
 header {
     background-color: var(--primary-color);
     padding: 15px;
-    text-align: center;
 }
 
 header h1 {
@@ -42,7 +43,11 @@ header h1 {
     margin: 0;
 }
 
+/* Mobile Navigation */
 nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-top: 10px;
 }
 
@@ -52,8 +57,8 @@ nav ul {
 }
 
 nav ul li {
-    display: inline-block;
-    margin: 0 10px;
+    display: block;
+    margin: 10px 0;
 }
 
 nav a {
@@ -63,18 +68,15 @@ nav a {
     transition: 0.3s;
 }
 
-/* Hover */
 nav a:hover {
     color: var(--accent-color);
     text-decoration: underline;
 }
 
-/* Active */
 nav a:active {
-    color: #d4ffdf;
+    color: #d4ffe8;
 }
 
-/* Focus */
 nav a:focus,
 button:focus,
 input:focus {
@@ -87,11 +89,11 @@ input:focus {
 
 section {
     background-color: var(--white);
-    margin: 20px;
+    margin: 15px;
     padding: 20px;
     border-radius: 10px;
     border: 1px solid var(--border-color);
-    box-shadow: 0 2px 6px rgba(0, 168, 107, 0.1);
+    box-shadow: 0 2px 6px rgba(0, 107, 60, 0.1);
 }
 
 h1, h2, h3 {
@@ -100,6 +102,19 @@ h1, h2, h3 {
 
 p {
     margin: 10px 0;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 250px;
+    flex-direction: column;
 }
 
 /* =========================
@@ -120,51 +135,56 @@ button {
 
 button:hover {
     background-color: var(--primary-color);
+    color: var(--white);
 }
 
 button:active {
-    background-color: #007a4d;
+    background-color: #004d2b;
 }
 
 /* =========================
-   PRODUCT LIST STYLING
+   PRODUCT GRID
 ========================= */
 
+.products-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
 article {
-    display: inline-block;
-    width: 220px;
-    margin: 10px;
-    padding: 15px;
-    vertical-align: top;
     background-color: var(--white);
     border: 1px solid var(--border-color);
     border-radius: 10px;
+    padding: 15px;
     transition: 0.3s;
+    animation: fadeIn 1s ease;
 }
 
-/* Product Card Hover */
 article:hover {
     transform: scale(1.03);
-    box-shadow: 0 4px 10px rgba(0, 168, 107, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 107, 60, 0.2);
 }
 
 /* nth-child styling */
 article:nth-child(odd) {
-    background-color: #f6fffa;
+    background-color: #f5fff9;
 }
 
 article:nth-child(even) {
-    background-color: #e9fff2;
+    background-color: #e8fff1;
 }
 
-/* Images */
+/* Product Images */
 img {
-    width: 100%;
+    width: 50%;
+    max-width: 50%;
+    height: auto;
     border-radius: 5px;
 }
 
 /* =========================
-LINKS
+   LINKS
 ========================= */
 
 a {
@@ -179,8 +199,12 @@ a:hover {
 }
 
 /* =========================
-TABLE STYLING
+   TABLE RESPONSIVENESS
 ========================= */
+
+.table-container {
+    overflow-x: auto;
+}
 
 table {
     width: 100%;
@@ -197,15 +221,14 @@ th, td {
     text-align: left;
 }
 
-/* First Child Styling */
 th:first-child,
 td:first-child {
-    background-color: #d8ffe7;
+    background-color: #d9ffea;
     font-weight: bold;
 }
 
 /* =========================
-FORMS
+   FORMS
 ========================= */
 
 form {
@@ -230,40 +253,51 @@ input {
     margin-bottom: 10px;
     border: 1px solid #999;
     border-radius: 5px;
+    width: 100%;
 }
 
-/* Required Pseudo-class */
 input:required {
-    border: 2px solid #00a86b;
+    border: 2px solid var(--primary-color);
 }
 
-/* Valid Pseudo-class */
 input:valid {
-    border: 2px solid #2ecc71;
+    border: 2px solid var(--accent-color);
 }
 
 /* =========================
-PRICE PSEUDO-ELEMENT
+   CART FLEXBOX
 ========================= */
 
-.price::before {
-    content: "₱";
-    color: var(--accent-color);
-    font-weight: bold;
+.cart-item {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
 }
 
 /* =========================
-EMPTY CART STYLE
+   CHECKOUT LAYOUT
 ========================= */
 
-section:empty {
-    background-color: #eafff0;
-    border: 2px dashed var(--accent-color);
-    padding: 20px;
+.checkout-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 /* =========================
-LIST MARKERS
+   ASIDE SIDEBAR
+========================= */
+
+aside {
+    background-color: #f0fff6;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+/* =========================
+   LIST MARKERS
 ========================= */
 
 li::marker {
@@ -271,7 +305,7 @@ li::marker {
 }
 
 /* =========================
-BLOCKQUOTE STYLING
+   BLOCKQUOTE
 ========================= */
 
 blockquote {
@@ -282,7 +316,6 @@ blockquote {
     position: relative;
 }
 
-/* Before & After */
 blockquote::before {
     content: "“";
     font-size: 30px;
@@ -296,18 +329,39 @@ blockquote::after {
 }
 
 /* =========================
-ASIDE
+   ANIMATIONS
 ========================= */
 
-aside {
-    background-color: #f0fff5;
-    padding: 15px;
-    border-radius: 8px;
-    margin: 20px;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+button:hover {
+    animation: bounce 0.4s ease;
 }
 
 /* =========================
-FOOTER
+   FOOTER
 ========================= */
 
 footer {
@@ -318,3 +372,65 @@ footer {
     margin-top: 20px;
 }
 
+/* =========================
+   TABLET VIEW
+========================= */
+
+@media (min-width: 481px) and (max-width: 768px) {
+
+    .products-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    nav ul li {
+        display: inline-block;
+        margin: 0 10px;
+    }
+
+    .cart-item {
+        flex-direction: row;
+    }
+}
+
+/* =========================
+   DESKTOP VIEW
+========================= */
+
+@media (min-width: 769px) {
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav {
+        flex-direction: row;
+    }
+
+    nav ul li {
+        display: inline-block;
+        margin-left: 15px;
+    }
+
+    .products-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .checkout-layout {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .main-layout {
+        display: grid;
+        grid-template-columns: 75% 25%;
+        gap: 20px;
+    }
+
+    .cart-item {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
