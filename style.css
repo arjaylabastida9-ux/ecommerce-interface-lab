@@ -1,0 +1,320 @@
+
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+:root {
+    --primary-color: #00a86b;      /* Prismatic Green */
+    --accent-color: #2ecc71;       /* Nebula Green */
+    --bg-light: #eefcf5;
+    --text-main: #333333;
+    --white: #ffffff;
+    --border-color: #b7e4c7;
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Body */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* =========================
+   HEADER & NAVIGATION
+========================= */
+
+header {
+    background-color: var(--primary-color);
+    padding: 15px;
+    text-align: center;
+}
+
+header h1 {
+    color: var(--white);
+    margin: 0;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--white);
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* Hover */
+nav a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* Active */
+nav a:active {
+    color: #d4ffdf;
+}
+
+/* Focus */
+nav a:focus,
+button:focus,
+input:focus {
+    outline: 2px solid var(--accent-color);
+}
+
+/* =========================
+   MAIN SECTIONS
+========================= */
+
+section {
+    background-color: var(--white);
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 6px rgba(0, 168, 107, 0.1);
+}
+
+h1, h2, h3 {
+    color: var(--primary-color);
+}
+
+p {
+    margin: 10px 0;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+    background-color: var(--accent-color);
+    color: var(--white);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: var(--primary-color);
+}
+
+button:active {
+    background-color: #007a4d;
+}
+
+/* =========================
+   PRODUCT LIST STYLING
+========================= */
+
+article {
+    display: inline-block;
+    width: 220px;
+    margin: 10px;
+    padding: 15px;
+    vertical-align: top;
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+/* Product Card Hover */
+article:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 10px rgba(0, 168, 107, 0.2);
+}
+
+/* nth-child styling */
+article:nth-child(odd) {
+    background-color: #f6fffa;
+}
+
+article:nth-child(even) {
+    background-color: #e9fff2;
+}
+
+/* Images */
+img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* =========================
+LINKS
+========================= */
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* =========================
+TABLE STYLING
+========================= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table, th, td {
+    border: 1px solid var(--border-color);
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+/* First Child Styling */
+th:first-child,
+td:first-child {
+    background-color: #d8ffe7;
+    font-weight: bold;
+}
+
+/* =========================
+FORMS
+========================= */
+
+form {
+    margin-top: 15px;
+}
+
+fieldset {
+    border: 1px solid var(--border-color);
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+legend {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+input {
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #999;
+    border-radius: 5px;
+}
+
+/* Required Pseudo-class */
+input:required {
+    border: 2px solid #00a86b;
+}
+
+/* Valid Pseudo-class */
+input:valid {
+    border: 2px solid #2ecc71;
+}
+
+/* =========================
+PRICE PSEUDO-ELEMENT
+========================= */
+
+.price::before {
+    content: "₱";
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+/* =========================
+EMPTY CART STYLE
+========================= */
+
+section:empty {
+    background-color: #eafff0;
+    border: 2px dashed var(--accent-color);
+    padding: 20px;
+}
+
+/* =========================
+LIST MARKERS
+========================= */
+
+li::marker {
+    color: var(--accent-color);
+}
+
+/* =========================
+BLOCKQUOTE STYLING
+========================= */
+
+blockquote {
+    background-color: #f4fff8;
+    border-left: 5px solid var(--accent-color);
+    padding: 15px;
+    font-style: italic;
+    position: relative;
+}
+
+/* Before & After */
+blockquote::before {
+    content: "“";
+    font-size: 30px;
+    color: var(--primary-color);
+}
+
+blockquote::after {
+    content: "”";
+    font-size: 30px;
+    color: var(--primary-color);
+}
+
+/* =========================
+ASIDE
+========================= */
+
+aside {
+    background-color: #f0fff5;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px;
+}
+
+/* =========================
+FOOTER
+========================= */
+
+footer {
+    text-align: center;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 15px;
+    margin-top: 20px;
+}
+
