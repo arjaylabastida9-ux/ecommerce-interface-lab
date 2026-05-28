@@ -1,36 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="style.css">
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Product Listing</title>
 </head>
 <body>
-  <main>
-    <article>
-      <img src="Speaker.jpg" alt="Product 1" />
-      <p>Price: $19.99</p>
-      <a href="detail.html">View Details</a>
-    </article>
+  <header>
+    <div class="header-inner">
+      <a href="Landing.html" class="brand">AJ'S STORE</a>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="Landing.html">Home</a></li>
+          <li><a href="Product.html">Products</a></li>
+          <li><a href="Cart.html">Cart</a></li>
+          <li><a href="Account.html">Account</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <article>
-      <img src="TV.jpg" alt="Product 2" />
-      <p>Price: $29.99</p>
-      <a href="detail.html">View Details</a>
-    </article>
-    <!-- Add more products as needed -->
+<main class="container products-page">
+    <aside>
+      <form action="#" method="GET">
+        <fieldset>
+          <legend>Filter Products</legend>
+          <p><strong>Category</strong></p>
+          <label><input type="checkbox" name="category" value="cat1" /> Category 1</label><br/>
+          <label><input type="checkbox" name="category" value="cat2" /> Category 2</label><br/>
+          <p><strong>Price</strong></p>
+          <label><input type="radio" name="price" value="low" /> Low Price</label><br/>
+          <label><input type="radio" name="price" value="high" /> High Price</label><br/>
+        </fieldset>
+        <button type="submit">Apply Filters</button>
+      </form>
+    </aside>
+    <section class="products-container">
+      <article>
+        <img src="Speaker.jpg" alt="Aesthetic Sofa" />
+        <p>Price: <span class="price">899.99</span></p>
+        <a href="detail.html">View Details</a>
+      </article>
+
+      <article>
+        <img src="TV.jpg" alt="king-sized Bed" />
+        <p>Price: <span class="price">1,200.00</span></p>
+        <a href="detail.html">View Details</a>
+      </article>
+    </section>
   </main>
 
-  <aside>
-    <form>
-      <fieldset>
-        <legend>Filter Products</legend>
-        <label><input type="checkbox" name="category" value="cat1" />Category 1</label><br/>
-        <label><input type="checkbox" name="category" value="cat2" />Category 2</label><br/>
-
-        <label><input type="radio" name="price" value="low" />Low Price</label><br/>
-        <label><input type="radio" name="price" value="high" />High Price</label><br/>
-      </fieldset>
-    </form>
-  </aside>
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="year-footer">2026</span> AJ'S STORE</p>
+    </div>
+  </footer>
+  <script src="main.js" defer></script>
 </body>
 </html>
