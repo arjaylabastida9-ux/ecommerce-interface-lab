@@ -1,16 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="style.css">
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sign Up</title>
 </head>
 <body>
-  <form>
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required /><br/>
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required /><br/>
-    <button type="submit">Sign Up</button>
-  </form>
+  <header>
+    <div class="header-inner">
+      <a href="Landing.html" class="brand">🛍️ AJ'S STORE</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="Landing.html">Home</a></li>
+          <li><a href="Product.html">Products</a></li>
+          <li><a href="Account.html">Account</a></li>
+          <li><a href="Signup.html" aria-current="page">Sign Up</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="auth-section" aria-labelledby="signup-heading">
+      <h1 id="signup-heading">Create Your Account</h1>
+      <p class="section-subtitle">Join our community and start shopping today</p>
+
+      <form action="#" method="POST" class="auth-form" aria-label="Sign up form">
+        <fieldset class="form-fieldset">
+          <legend>Account Information</legend>
+
+          <div class="form-group">
+            <label for="firstname">First Name:</label>
+            <input 
+              type="text" 
+              id="firstname" 
+              name="firstname" 
+              required 
+              aria-required="true"
+              placeholder="John"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="lastname">Last Name:</label>
+            <input 
+              type="text" 
+              id="lastname" 
+              name="lastname" 
+              required 
+              aria-required="true"
+              placeholder="Doe"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="signup-email">Email Address:</label>
+            <input 
+              type="email" 
+              id="signup-email" 
+              name="email" 
+              required 
+              aria-required="true"
+              placeholder="john@example.com"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input 
+              type="tel" 
+              id="phone" 
+              name="phone" 
+              placeholder="+1 (555) 000-0000"
+            />
+          </div>
+        </fieldset>
+
+        <fieldset class="form-fieldset">
+          <legend>Login Credentials</legend>
+
+          <div class="form-group">
+            <label for="signup-password">Password:</label>
+            <input 
+              type="password" 
+              id="signup-password" 
+              name="password" 
+              required 
+              aria-required="true"
+              minlength="8"
+              placeholder="At least 8 characters"
+            />
+            <small>Must be at least 8 characters long</small>
+          </div>
+
+          <div class="form-group">
+            <label for="confirm-password">Confirm Password:</label>
+            <input 
+              type="password" 
+              id="confirm-password" 
+              name="confirm-password" 
+              required 
+              aria-required="true"
+              minlength="8"
+              placeholder="Re-enter your password"
+            />
+          </div>
+        </fieldset>
+
+        <fieldset class="form-fieldset">
+          <legend>Preferences</legend>
+
+          <div class="form-group checkbox-group">
+            <label class="checkbox-label">
+              <input 
+                type="checkbox" 
+                name="newsletter" 
+                id="newsletter"
+              />
+              Subscribe to our newsletter for updates and exclusive offers
+            </label>
+          </div>
+
+          <div class="form-group checkbox-group">
+            <label class="checkbox-label">
+              <input 
+                type="checkbox" 
+                name="terms" 
+                id="terms"
+                required
+                aria-required="true"
+              />
+              I agree to the Terms of Service and Privacy Policy
+            </label>
+          </div>
+        </fieldset>
+
+        <button type="submit" class="btn btn-primary btn-large">Create Account</button>
+        <p class="auth-footer">Already have an account? <a href="Account.html">Log in here</a></p>
+      </form>
+    </section>
+  </main>
+
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year-signup">2026</span> AJ'S STORE</p>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
 </body>
 </html>
