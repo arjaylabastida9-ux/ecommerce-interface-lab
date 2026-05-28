@@ -2,32 +2,64 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
   <title>Product Detail</title>
 </head>
 <body>
-  <table>
-    <tr><th>Specification</th><th>Details</th></tr>
-    <tr><td>Weight</td><td>1 kg</td></tr>
-    <tr><td>Color</td><td>Blue</td></tr>
-    <!-- More specifications -->
-  </table>
+  <header>
+    <div class="header-inner">
+      <a href="Landing.html" class="brand">🛍️ AJ'S STORE</a>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="Landing.html">Home</a></li>
+          <li><a href="Product.html">Products</a></li>
+          <li><a href="Cart.html">Cart</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-  <form>
-    <label for="quantity">Quantity:</label>
-    <input type="number" id="quantity" name="quantity" value="1" min="1" />
-    <button type="submit">Add to Cart</button>
-  </form>
+  <main class="container">
+    <section>
+      <h2>Specifications</h2>
+      <div class="table-container">
+        <table>
+          <caption>Product Specifications</caption>
+          <tr><th scope="col">Specification</th><th scope="col">Details</th></tr>
+          <tr><td>Weight</td><td>1 kg</td></tr>
+          <tr><td>Color</td><td>Black</td></tr>
+        </table>
+      </div>
+    </section>
 
-  <section>
-    <h2>User Reviews</h2>
-    <blockquote>
-      <p>Great product, highly recommend!</p>
-      <footer>- Alice</footer>
-    </blockquote>
-    <article>
-      <p>Not as expected.</p>
-      <footer>- Bob</footer>
-    </article>
-  </section>
+    <section>
+      <h2>Purchase</h2>
+      <form action="Cart.html" method="POST">
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" value="1" min="1" />
+        <button type="submit">Add to Cart</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>User Reviews</h2>
+      <blockquote>
+        <p>Great product, highly recommend!</p>
+        <footer>- Alice</footer>
+      </blockquote>
+      <article>
+        <p>Not as expected.</p>
+        <footer>- Bob</footer>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="year-detail">2026</span> AJ'S STORE</p>
+    </div>
+  </footer>
+  <script src="main.js" defer></script>
 </body>
 </html>
