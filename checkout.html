@@ -1,37 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="style.css">
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Checkout & Shipping</title>
 </head>
 <body>
-  <section>
-    <h2>Checkout Process</h2>
+  <header>
+    <div class="header-inner">
+      <a href="Landing.html" class="brand">🛍️ AJ'S STORE</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="Landing.html">Home</a></li>
+          <li><a href="Product.html">Products</a></li>
+          <li><a href="Cart.html">Cart</a></li>
+          <li><a href="Checkout.html" aria-current="page">Checkout</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <fieldset>
-      <legend>Shipping Address</legend>
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required /><br/>
-      <label for="street">Street:</label>
-      <input type="text" id="street" name="street" required /><br/>
-      <label for="zip">ZIP Code:</label>
-      <input type="text" id="zip" name="zip" required />
-    </fieldset>
+  <main class="container">
+    <h1>Checkout</h1>
 
-    <form>
-      <fieldset>
-        <legend>Payment Details</legend>
-        <label><input type="radio" name="payment" value="credit-card" required />Credit Card</label><br/>
-        <label><input type="radio" name="payment" value="paypal" />PayPal</label><br/>
-        <!-- Add more payment fields here -->
-      </fieldset>
-    </form>
+    <div class="checkout-wrapper">
+      <!-- Main Checkout Form -->
+      <section class="checkout-form-section">
+        <form action="#" method="POST" class="checkout-form" aria-label="Checkout form">
+          
+          <!-- Shipping Information Section -->
+          <fieldset class="form-fieldset">
+            <legend>Shipping Address</legend>
+            <div class="form-group">
+              <label for="fullname">Full Name:</label>
+              <input type="text" id="fullname" name="fullname" required aria-required="true" placeholder="John Doe" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required aria-required="true" placeholder="john@example.com" />
+            </div>
+            <div class="form-group">
+              <label for="street">Street Address:</label>
+              <input type="text" id="street" name="street" required aria-required="true" placeholder="123 Main Street" />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" required aria-required="true" placeholder="New York" />
+              </div>
+              <div class="form-group">
+                <label for="state">State/Province:</label>
+                <input type="text" id="state" name="state" required aria-required="true" placeholder="NY" />
+              </div>
+              <div class="form-group">
+                <label for="zip">ZIP/Postal Code:</label>
+                <input type="text" id="zip" name="zip" required aria-required="true" placeholder="10001" />
+              </div>
+            </div>
+          </fieldset>
 
-    <aside style="position: fixed; right: 0; top: 0; width: 200px; background: #f0f0f0; padding: 10px;">
-      <h3>Order Summary</h3>
-      <p>Total: $79.97</p>
-      <button type="submit">Place Order</button>
-    </aside>
-  </section>
+          <!-- Payment Information Section -->
+          <fieldset class="form-fieldset">
+            <legend>Payment Details</legend>
+            <div class="form-group">
+              <p><strong>Select Payment Method:</strong></p>
+              <div class="radio-group">
+                <label class="radio-label">
+                  <input type="radio" name="payment" value="credit-card" required aria-required="true" checked />
+                  Credit Card
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="payment" value="paypal" required aria-required="true" />
+                  PayPal
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="payment" value="bank-transfer" required aria-required="true" />
+                  Bank Transfer
+                </label>
+              </div>
+            </div>
+          </fieldset>
+
+          <button type="submit" class="btn btn-primary btn-large">Complete Order</button>
+        </form>
+      </section>
+
+      <!-- Order Summary Sidebar -->
+      <aside class="checkout-summary" aria-labelledby="order-summary-heading">
+        <h2 id="order-summary-heading">Order Summary</h2>
+        
+        <div class="summary-items">
+          <div class="summary-item">
+            <span>Portable Speaker × 1</span>
+            <span>₱899.99</span>
+          </div>
+          <div class="summary-item">
+            <span>Smart TV × 2</span>
+            <span>₱59.98</span>
+          </div>
+        </div>
+
+        <div class="summary-divider"></div>
+
+        <div class="summary-row">
+          <span>Subtotal:</span>
+          <span>₱79.97</span>
+        </div>
+        <div class="summary-row">
+          <span>Shipping:</span>
+          <span>₱10.00</span>
+        </div>
+        <div class="summary-row">
+          <span>Tax:</span>
+          <span>₱7.20</span>
+        </div>
+
+        <div class="summary-divider"></div>
+
+        <div class="summary-row total">
+          <span>Total:</span>
+          <span>₱97.17</span>
+        </div>
+
+        <p class="summary-note">You'll be able to review your order before confirming payment.</p>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-section">
+        <h3>About Us</h3>
+        <p>Your trusted online store for quality products.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="Product.html">Shop</a></li>
+          <li><a href="Account.html">Account</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year-checkout">2026</span> AJ'S STORE</p>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
 </body>
 </html>
