@@ -1,31 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="style.css">
   <meta charset="UTF-8" />
-  <title>User Account</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout & Shipping</title>
 </head>
 <body>
   <header>
-    <h1>Welcome, User!</h1>
-    <nav>
-      <ul>
-        <li><a href="#">Order History</a></li>
-        <li><a href="#">Profile Settings</a></li>
-        <li><a href="#">Wishlist</a></li>
-      </ul>
-    </nav>
+    <div class="header-inner">
+      <a href="Landing.html" class="brand">🛍️ AJ'S STORE</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="Landing.html">Home</a></li>
+          <li><a href="Product.html">Products</a></li>
+          <li><a href="Cart.html">Cart</a></li>
+          <li><a href="Account.html" aria-current="page">Account</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <dl>
-    <dt>Order 001</dt>
-    <dd>Details of order...</dd>
-    <dt>Order 002</dt>
-    <dd>Details of order...</dd>
-  </dl>
+  <main class="container">
+    <h1>My Account</h1>
 
-  <details>
-    <summary>Order 003</summary>
-    <p>More information about order 003</p>
-  </details>
+    <nav class="account-tabs" aria-label="Account sections">
+      <ul>
+        <li><a href="#profile">Profile</a></li>
+        <li><a href="#orders">Order History</a></li>
+        <li><a href="#settings">Settings</a></li>
+      </ul>
+    </nav>
+
+    <!-- Profile Section -->
+    <section id="profile" class="account-section" aria-labelledby="profile-heading">
+      <h2 id="profile-heading">Profile Information</h2>
+      
+      <form action="#" method="POST" class="profile-form" aria-label="Update profile">
+        <fieldset class="form-fieldset">
+          <legend>Personal Information</legend>
+
+          <div class="form-group">
+            <label for="acc-firstname">First Name:</label>
+            <input 
+              type="text" 
+              id="acc-firstname" 
+              name="firstname" 
+              value="John"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="acc-lastname">Last Name:</label>
+            <input 
+              type="text" 
+              id="acc-lastname" 
+              name="lastname" 
+              value="Doe"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="acc-email">Email Address:</label>
+            <input 
+              type="email" 
+              id="acc-email" 
+              name="email" 
+              value="john@example.com"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="acc-phone">Phone Number:</label>
+            <input 
+              type="tel" 
+              id="acc-phone" 
+              name="phone" 
+              value="+1 (555) 000-0000"
+            />
+          </div>
+        </fieldset>
+
+        <fieldset class="form-fieldset">
+          <legend>Billing Address</legend>
+
+          <div class="form-group">
+            <label for="acc-street">Street Address:</label>
+            <input 
+              type="text" 
+              id="acc-street" 
+              name="street" 
+              value="123 Main Street"
+              required
+            />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="acc-city">City:</label>
+              <input 
+                type="text" 
+                id="acc-city" 
+                name="city" 
+                value="New York"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="acc-state">State:</label>
+              <input 
+                type="text" 
+                id="acc-state" 
+                name="state" 
+                value="NY"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="acc-zip">ZIP Code:</label>
+              <input 
+                type="text" 
+                id="acc-zip" 
+                name="zip" 
+                value="10001"
+                required
+              />
+            </div>
+          </div>
+        </fieldset>
+
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+      </form>
+    </section>
+
+    <!-- Order History Section -->
+    <section id="orders" class="account-section" aria-labelledby="orders-heading">
+      <h2 id="orders-heading">Order History</h2>
+
+      <div class="orders-list">
+        <details class="order-item">
+          <summary>
+            <span class="order-id">Order #1005</span>
+            <span class="order-date">June 15, 2026</span>
+            <span class="order-total">₱97.17</span>
+            <span class="order-status">Delivered</span>
+          </summary>
+          <div class="order-details">
+            <p><strong>Items:</strong></p>
+            <ul>
+              <li>Portable Speaker × 1 — ₱899.99</li>
+              <li>Smart TV × 2 — ₱59.98</li>
+            </ul>
+            <p><strong>Shipping Address:</strong></p>
+            <address>123 Main Street<br/>New York, NY 10001</address>
+            <p><strong>Tracking Number:</strong> 1Z999AA10123456784</p>
+            <a href="#" class="btn btn-secondary">View Details</a>
+            <a href="#" class="btn btn-secondary">Reorder</a>
+          </div>
+        </details>
+
+        <details class="order-item">
+          <summary>
+            <span class="order-id">Order #1004</span>
+            <span class="order-date">June 8, 2026</span>
+            <span class="order-total">₱45.99</span>
+            <span class="order-status">Delivered</span>
+          </summary>
+          <div class="order-details">
+            <p><strong>Items:</strong></p>
+            <ul>
+              <li>Portable Speaker × 1 — ₱899.99</li>
+              <li>Product Bundle — ₱26.00</li>
+            </ul>
+            <p><strong>Shipping Address:</strong></p>
+            <address>123 Main Street<br/>New York, NY 10001</address>
+            <p><strong>Tracking Number:</strong> 1Z999AA10123456785</p>
+            <a href="#" class="btn btn-secondary">View Details</a>
+            <a href="#" class="btn btn-secondary">Reorder</a>
+          </div>
+        </details>
+
+        <details class="order-item">
+          <summary>
+            <span class="order-id">Order #1003</span>
+            <span class="order-date">May 28, 2026</span>
+            <span class="order-total">₱1,200.00</span>
+            <span class="order-status">Delivered</span>
+          </summary>
+          <div class="order-details">
+            <p><strong>Items:</strong></p>
+            <ul>
+              <li>Smart TV × 1 — ₱1,200.00</li>
+            </ul>
+            <p><strong>Shipping Address:</strong></p>
+            <address>123 Main Street<br/>New York, NY 10001</address>
+            <p><strong>Tracking Number:</strong> 1Z999AA10123456786</p>
+            <a href="#" class="btn btn-secondary">View Details</a>
+            <a href="#" class="btn btn-secondary">Reorder</a>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- Settings Section -->
+    <section id="settings" class="account-section" aria-labelledby="settings-heading">
+      <h2 id="settings-heading">Account Settings</h2>
+
+      <fieldset class="form-fieldset">
+        <legend>Preferences</legend>
+
+        <div class="form-group checkbox-group">
+          <label class="checkbox-label">
+            <input type="checkbox" name="newsletter" checked />
+            Receive newsletter and promotional emails
+          </label>
+        </div>
+
+        <div class="form-group checkbox-group">
+          <label class="checkbox-label">
+            <input type="checkbox" name="notifications" checked />
+            Receive order and shipping notifications
+          </label>
+        </div>
+
+        <div class="form-group checkbox-group">
+          <label class="checkbox-label">
+            <input type="checkbox" name="reviews" />
+            Allow other customers to see my reviews
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset class="form-fieldset">
+        <legend>Security</legend>
+
+        <div class="form-group">
+          <label for="current-password">Current Password:</label>
+          <input 
+            type="password" 
+            id="current-password" 
+            name="current-password"
+            placeholder="Enter your current password"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="new-password">New Password:</label>
+          <input 
+            type="password" 
+            id="new-password" 
+            name="new-password"
+            minlength="8"
+            placeholder="At least 8 characters"
+          />
+        </div>
+
+        <button type="button" class="btn btn-secondary">Change Password</button>
+      </fieldset>
+
+      <fieldset class="form-fieldset danger-zone">
+        <legend>Danger Zone</legend>
+        <p>Once you delete your account, there is no going back. Please be certain.</p>
+        <button type="button" class="btn btn-danger">Delete Account</button>
+      </fieldset>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-section">
+        <h3>About Us</h3>
+        <p>Your trusted online store for quality products.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="Product.html">Shop</a></li>
+          <li><a href="#">Help</a></li>
+          <li><a href="#">Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year-account">2026</span> AJ'S STORE</p>
+    </div>
+  </footer>
+  <script src="main.js" defer></script>
 </body>
 </html>
